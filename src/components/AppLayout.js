@@ -2,6 +2,9 @@ import PropTypes from "prop-types";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Input, Menu, Row, Col } from "antd";
+import UserProfile from "./UserProfile";
+import LoginForm from "./LoginForm";
+
 //Row가로줄 Col 세로줄
 
 const AppLayout = ({ children }) => {
@@ -31,7 +34,7 @@ const AppLayout = ({ children }) => {
         </Menu>
         <Row gutter={8}>
           <Col xs={24} md={6} />
-          왼쪽메뉴
+          {isLoggedIn ? <UserProfile /> : <LoginForm />}
           <Col xs={24} md={12} />
           {children}
           <Col xs={24} md={6} />
