@@ -1,6 +1,11 @@
 import React, { useState, useCallback } from "react";
 import { Button, Form, Input } from "antd";
 import Link from "next/link";
+import styled from "styled-components";
+
+const ButtonWrapper = styled.div`
+  margintop: 10px;
+`;
 
 const LoginForm = () => {
   const [id, setId] = useState("");
@@ -15,7 +20,7 @@ const LoginForm = () => {
   }, []);
 
   return (
-    <Form>
+    <Form style={{ marginTop: 10 }}>
       <div>
         <lable htmlFor="user-id">아이디</lable>
         <br />
@@ -31,14 +36,14 @@ const LoginForm = () => {
           required
         />
       </div>
-      <div>
+      <ButtonWrapper>
         <Button type="primary" htmlType="submit" loading={false}>
           로그인
         </Button>
         <Link href="/signup">
           <a>회원가입하기</a>
         </Link>
-      </div>
+      </ButtonWrapper>
     </Form>
   );
 };
